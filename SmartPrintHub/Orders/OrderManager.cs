@@ -2,7 +2,11 @@
 
 public class OrderManager
 {
-    private List<Order> orders = new List<Order>();
+    public OrderManager()
+    {
+        LoadFromJson();
+    }
+    public List<Order> orders = new List<Order>();
     public void AddOrder(Order order)
     {
         orders.Add(order);
@@ -19,12 +23,8 @@ public class OrderManager
     }
     public void LoadFromJson()
     {
-        var options = new JsonSerializerOptions
-        {
-            PropertyNameCaseInsensitive = true
-        };
         string jsonString = File.ReadAllText("orders.json");
-        orders = JsonSerializer.Deserialize<List<Order>>(jsonString, options);
+        orders = JsonSerializer.Deserialize<List<Order>>(jsonString);
     }
 
     public void SaveToJson()

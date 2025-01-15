@@ -1,6 +1,5 @@
 ﻿public abstract class Printer
 {
-    CalculatePrice calculatePrice = new CalculatePrice();
     public string brand { get; set; }
     public string TipImprimanta { get; set; }
     public float MaterialCapacity { get; set; }
@@ -18,6 +17,6 @@
     }
     public float getOrder(Order order)
     {
-        return calculatePrice.Calculate(order.weight,order.PrinterTypename);
+        return order.Weight;
     }
 }

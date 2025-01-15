@@ -1,6 +1,6 @@
-﻿public class resinPrinter : Printer
+﻿public class ResinPrinter : Printer
 {
-    public resinPrinter(string brand)
+    public ResinPrinter(string brand)
     {
         this.brand = brand;
         this.TipImprimanta = "Resin";

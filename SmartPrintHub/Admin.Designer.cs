@@ -29,22 +29,55 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            label2 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            listBox1 = new ListBox();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(305, 169);
+            label1.Location = new Point(170, 55);
             label1.Name = "label1";
-            label1.Size = new Size(43, 15);
+            label1.Size = new Size(38, 15);
             label1.TabIndex = 0;
-            label1.Text = "Admin";
+            label1.Text = "label1";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(802, 55);
+            label2.Name = "label2";
+            label2.Size = new Size(47, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Printers";
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Location = new Point(593, 104);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(462, 477);
+            flowLayoutPanel1.TabIndex = 2;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(32, 104);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(506, 469);
+            listBox1.TabIndex = 3;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // Admin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1082, 593);
+            Controls.Add(listBox1);
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(label2);
             Controls.Add(label1);
             Name = "Admin";
             Text = "Admin";
@@ -55,5 +88,8 @@
         #endregion
 
         private Label label1;
+        private Label label2;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private ListBox listBox1;
     }
 }

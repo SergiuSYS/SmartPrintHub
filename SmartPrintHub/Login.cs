@@ -6,7 +6,6 @@ namespace WinFormsApp1
         public Login()
         {
             InitializeComponent();
-            accountManager.AddAccount(new Account("adminUser", "123") { IsAdmin = true });
 
         }
 
