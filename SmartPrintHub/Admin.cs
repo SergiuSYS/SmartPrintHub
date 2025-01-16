@@ -26,10 +26,7 @@ namespace WinFormsApp1
                 printerHolder.SetPrinterInfo(printer.brand, printer.TipImprimanta, printer.MaterialCapacity.ToString(), printer);
                 flowLayoutPanel1.Controls.Add(printerHolder);
             }
-            foreach(Order order in printerManager.orderManager.orders)
-            {
-                listBox1.Items.Add($"{order.Name},{order.ObjectName},{order.PrinterTypename},{order.Destination},{order.Price}");
-            }
+            UpdateListBox();
             this.FormClosing += Admin_FormClosing;
         }
         public void SendOrderToPrinter(UserControl1 targetControl)
@@ -74,6 +71,25 @@ namespace WinFormsApp1
                 e.Cancel = true;
             }
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (printerManager.SendOrderToPrinter())
+            {
+                UpdateListBox();
+                MessageBox.Show("Order sent to printer.");
+            }
+            else
+            {
+                MessageBox.Show("No printer available to print the order.");
+            }
+        }
+        private void UpdateListBox()
+        {
+            foreach (Order order in printerManager.orderManager.orders)
+            {
+                listBox1.Items.Add($"{order.Name},{order.ObjectName},{order.PrinterTypename},{order.Destination},{order.Price}");
+            }
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
         }
@@ -87,5 +103,7 @@ namespace WinFormsApp1
         {
 
         }
+
+
     }
 }

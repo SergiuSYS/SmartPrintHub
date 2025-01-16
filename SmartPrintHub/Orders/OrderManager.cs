@@ -13,6 +13,10 @@ public class OrderManager
     }
     public Order getOrder()
     {
+        if (orders.Count() <= 0)
+        {
+            return null;
+        }   
         Order temp = orders[orders.Count()-1];
         if (orders.Count() > 0)
         {

@@ -32,6 +32,7 @@
             label2 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             listBox1 = new ListBox();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -56,7 +57,7 @@
             // 
             flowLayoutPanel1.Location = new Point(593, 104);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(462, 477);
+            flowLayoutPanel1.Size = new Size(462, 411);
             flowLayoutPanel1.TabIndex = 2;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
@@ -70,11 +71,22 @@
             listBox1.TabIndex = 3;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
+            // button1
+            // 
+            button1.Location = new Point(754, 529);
+            button1.Name = "button1";
+            button1.Size = new Size(137, 52);
+            button1.TabIndex = 4;
+            button1.Text = "Print";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Admin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1082, 593);
+            Controls.Add(button1);
             Controls.Add(listBox1);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(label2);
@@ -91,5 +103,6 @@
         private Label label2;
         private FlowLayoutPanel flowLayoutPanel1;
         private ListBox listBox1;
+        private Button button1;
     }
 }

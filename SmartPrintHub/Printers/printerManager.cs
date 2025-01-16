@@ -17,8 +17,9 @@
     }
     public Order GetOrderFromOrdermanager(Order order)
     {
+        Order ordertemp = orderManager.getOrder();
         orderManager.SaveToJson();
-        return orderManager.getOrder();
+        return ordertemp;
     }
     private int FindeAvaliblePrinter(string Type,float material)
     {
@@ -32,5 +33,21 @@
             }            
         }
         return -1;
+    }
+    public bool SendOrderToPrinter()
+    {
+        Order order = orderManager.getOrder();
+        if (order == null)
+        {
+            return false;
+        }
+        int i = FindeAvaliblePrinter(order.PrinterTypename, order.Weight);
+        if (i != -1)
+        {
+            orderManager.SaveToJson();
+            printers[i].Print(order.Weight);
+            return true;
+        }
+        return false;
     }
 }
