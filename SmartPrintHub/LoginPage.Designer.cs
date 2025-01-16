@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1
 {
-    partial class Login
+    partial class LoginPage
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
             button1 = new Button();
             button2 = new Button();
             label1 = new Label();
