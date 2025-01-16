@@ -38,59 +38,75 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(170, 55);
+            label1.BackColor = Color.FromArgb(224, 205, 248);
+            label1.BorderStyle = BorderStyle.FixedSingle;
+            label1.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(194, 73);
             label1.Name = "label1";
-            label1.Size = new Size(54, 15);
+            label1.Size = new Size(62, 23);
             label1.TabIndex = 0;
-            label1.Text = "Comenzi";
+            label1.Text = "Orders";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(802, 55);
+            label2.BackColor = Color.FromArgb(224, 205, 248);
+            label2.BorderStyle = BorderStyle.FixedSingle;
+            label2.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(917, 73);
             label2.Name = "label2";
-            label2.Size = new Size(47, 15);
+            label2.Size = new Size(69, 23);
             label2.TabIndex = 1;
             label2.Text = "Printers";
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Location = new Point(593, 104);
+            flowLayoutPanel1.BackColor = Color.FromArgb(224, 205, 248);
+            flowLayoutPanel1.Location = new Point(678, 139);
+            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(462, 411);
+            flowLayoutPanel1.Size = new Size(528, 548);
             flowLayoutPanel1.TabIndex = 2;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // listBox1
             // 
+            listBox1.BackColor = Color.FromArgb(224, 205, 248);
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(32, 104);
+            listBox1.Location = new Point(37, 139);
+            listBox1.Margin = new Padding(3, 4, 3, 4);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(506, 469);
+            listBox1.Size = new Size(578, 624);
             listBox1.TabIndex = 3;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // button1
             // 
-            button1.Location = new Point(754, 529);
+            button1.BackColor = Color.FromArgb(224, 205, 248);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Tempus Sans ITC", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(862, 705);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(137, 52);
+            button1.Size = new Size(157, 69);
             button1.TabIndex = 4;
             button1.Text = "Print";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // Admin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1082, 593);
+            BackgroundImage = SmartPrintHub.Properties.Resources.background2loin;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1237, 791);
             Controls.Add(button1);
             Controls.Add(listBox1);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Admin";
             Text = "Admin";
             ResumeLayout(false);
