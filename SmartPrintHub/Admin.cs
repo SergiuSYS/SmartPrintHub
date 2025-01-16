@@ -32,10 +32,40 @@ namespace WinFormsApp1
             {
                 listBox1.Items.Add($"{order.Name},{order.ObjectName},{order.PrinterTypename},{order.Destination},{order.Price}");
             }
+            this.FormClosing += Admin_FormClosing;
         }
         public void SendOrderToPrinter(Order order)
         {
             printerManager.GetOrderFromOrdermanager(orderManager.getOrder());
+        }
+
+        private void Admin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to close the application?",
+                "Confirm Exit",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    accountManager.SaveToJson();
+                    orderManager.SaveToJson();
+                    Environment.Exit(0);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while saving data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {

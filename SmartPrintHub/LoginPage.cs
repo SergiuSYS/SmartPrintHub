@@ -6,7 +6,7 @@ namespace WinFormsApp1
         public LoginPage()
         {
             InitializeComponent();
-            accountManager.AddAccount(new Account("adminUser", "123") { IsAdmin = true });
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
         }
 
@@ -38,6 +38,13 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string username = textBox1.Text;
+            string password = textBox2.Text;
+            if(string.IsNullOrEmpty(username) && string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Please enter a username and password");
+                return;
+            }
             accountManager.AddAccount(new Account(textBox1.Text, textBox2.Text));
             accountManager.SaveToJson();
             MessageBox.Show("Account added pleas login");
