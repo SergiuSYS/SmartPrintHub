@@ -17,7 +17,6 @@ namespace WinFormsApp1
 
             if (accountManager.login(username, password))
             {
-                MessageBox.Show($"{accountManager.CheckForAdmin(username, password)}");
                 if (accountManager.CheckForAdmin(username, password))
                 {
                     Admin adminForm = new Admin();
@@ -47,7 +46,7 @@ namespace WinFormsApp1
             }
             accountManager.AddAccount(new Account(textBox1.Text, textBox2.Text));
             accountManager.SaveToJson();
-            MessageBox.Show("Account added pleas login");
+            MessageBox.Show("Account added please login");
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

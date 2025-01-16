@@ -41,9 +41,10 @@
             label1.BackColor = Color.FromArgb(224, 205, 248);
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(194, 73);
+            label1.Location = new Point(242, 91);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(62, 23);
+            label1.Size = new Size(77, 27);
             label1.TabIndex = 0;
             label1.Text = "Orders";
             // 
@@ -53,19 +54,20 @@
             label2.BackColor = Color.FromArgb(224, 205, 248);
             label2.BorderStyle = BorderStyle.FixedSingle;
             label2.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(917, 73);
+            label2.Location = new Point(1146, 91);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(69, 23);
+            label2.Size = new Size(86, 27);
             label2.TabIndex = 1;
             label2.Text = "Printers";
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = Color.FromArgb(224, 205, 248);
-            flowLayoutPanel1.Location = new Point(678, 139);
-            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanel1.Location = new Point(848, 174);
+            flowLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(528, 548);
+            flowLayoutPanel1.Size = new Size(660, 685);
             flowLayoutPanel1.TabIndex = 2;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
@@ -73,10 +75,11 @@
             // 
             listBox1.BackColor = Color.FromArgb(224, 205, 248);
             listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(37, 139);
-            listBox1.Margin = new Padding(3, 4, 3, 4);
+            listBox1.ItemHeight = 25;
+            listBox1.Location = new Point(46, 174);
+            listBox1.Margin = new Padding(4, 5, 4, 5);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(578, 624);
+            listBox1.Size = new Size(722, 779);
             listBox1.TabIndex = 3;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
@@ -84,11 +87,11 @@
             // 
             button1.BackColor = Color.FromArgb(224, 205, 248);
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tempus Sans ITC", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(862, 705);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(1078, 881);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(157, 69);
+            button1.Size = new Size(196, 86);
             button1.TabIndex = 4;
             button1.Text = "Print";
             button1.UseVisualStyleBackColor = false;
@@ -96,17 +99,17 @@
             // 
             // Admin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = SmartPrintHub.Properties.Resources.background2loin;
+            BackgroundImage = SmartPrintHub.Properties.Resources._2788739;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1237, 791);
+            ClientSize = new Size(1546, 989);
             Controls.Add(button1);
             Controls.Add(listBox1);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Admin";
             Text = "Admin";
             ResumeLayout(false);
