@@ -15,28 +15,35 @@ namespace WinFormsApp1
     {
         AccountManager accountManager;
         PrinterManager printerManager;
-        OrderManager orderManager;
         public Admin()
         {
             InitializeComponent();
             accountManager = new AccountManager();
             printerManager = new PrinterManager();
-            orderManager = new OrderManager();
             foreach (Printer printer in printerManager.printers)
             {
                 UserControl1 printerHolder = new UserControl1();
                 printerHolder.SetPrinterInfo(printer.brand, printer.TipImprimanta, printer.MaterialCapacity.ToString(), printer);
                 flowLayoutPanel1.Controls.Add(printerHolder);
             }
-            foreach(Order order in orderManager.orders)
+            foreach(Order order in printerManager.orderManager.orders)
             {
                 listBox1.Items.Add($"{order.Name},{order.ObjectName},{order.PrinterTypename},{order.Destination},{order.Price}");
             }
             this.FormClosing += Admin_FormClosing;
         }
-        public void SendOrderToPrinter(Order order)
+        public void SendOrderToPrinter(UserControl1 targetControl)
         {
-            printerManager.GetOrderFromOrdermanager(orderManager.getOrder());
+            Order orderToSend = printerManager.GetOrderFromOrdermanager(printerManager.orderManager.getOrder());
+
+            if (orderToSend != null)
+            {
+                targetControl.AssignOrder(orderToSend);
+            }
+            else
+            {
+                MessageBox.Show("No orders available to send.");
+            }
         }
 
         private void Admin_FormClosing(object sender, FormClosingEventArgs e)
@@ -53,7 +60,7 @@ namespace WinFormsApp1
                 try
                 {
                     accountManager.SaveToJson();
-                    orderManager.SaveToJson();
+                    printerManager.orderManager.SaveToJson();
                     Environment.Exit(0);
                 }
                 catch (Exception ex)

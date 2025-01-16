@@ -105,6 +105,7 @@
             Controls.Add(label1);
             Name = "UserControl1";
             Size = new Size(215, 104);
+            Load += UserControl1_Load;
             ResumeLayout(false);
             PerformLayout();
         }

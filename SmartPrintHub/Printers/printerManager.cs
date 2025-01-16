@@ -1,5 +1,6 @@
 ﻿public class PrinterManager
 {
+    public OrderManager orderManager;
     public List<Printer> printers = new List<Printer>();
     Printer Filamentprinter1 = new FilamentPrinter("SmartImprim");  
     Printer Filamentprinter2 = new FilamentPrinter("SmartImprim");
@@ -12,10 +13,12 @@
         printers.Add(Filamentprinter2);
         printers.Add(Resinprinter1);
         printers.Add(Resinprinter2);
+        orderManager = new OrderManager();
     }
-    public void GetOrderFromOrdermanager(Order order)
+    public Order GetOrderFromOrdermanager(Order order)
     {
-
+        orderManager.SaveToJson();
+        return orderManager.getOrder();
     }
     private int FindeAvaliblePrinter(string Type,float material)
     {
